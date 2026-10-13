@@ -1,0 +1,27 @@
+{
+  "name": "p2p-chat",
+  "version": "1.0.0",
+  "description": "Serversiz P2P chat: matn, fayl, ovozli va video xabarlar",
+  "main": "main.js",
+  "author": "P2P Chat",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win portable --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "uz.p2pchat.app",
+    "productName": "P2P Chat",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "www/**/*"],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "signAndEditExecutable": false
+    },
+    "portable": { "artifactName": "P2PChat-portable.exe" }
+  }
+}
